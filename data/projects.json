@@ -28,10 +28,7 @@
     "id": "4",
     "name": "facebook-clone-react",
     "description": "A clone of facebook using react",
-    "screenshots": [
-      "https://pbs.twimg.com/media/EvjB-BfUYAAXWFC.jpg",
-      "https://pbs.twimg.com/media/EvjB-BfUYAAXWFC.jpg"
-    ],
+    "screenshots": ["./data/fb1.PNG", "./data/fb2.PNG"],
     "github": "https://github.com/sami-29/facebook-clone-react"
   },
   {
@@ -39,8 +36,10 @@
     "name": "todo-list-react",
     "description": "A todo list using react",
     "screenshots": [
-      "https://pbs.twimg.com/media/EvjB-BfUYAAXWFC.jpg",
-      "https://pbs.twimg.com/media/EvjB-BfUYAAXWFC.jpg"
+      "./data/todo1.PNG",
+      "./data/todo2.PNG",
+      "./data/todo3.PNG",
+      "./data/todo4.PNG"
     ],
     "github": "https//github.com/sami-29/todo-list-react"
   },
@@ -49,8 +48,13 @@
     "name": "linus-tech-tips",
     "description": "An e-commerce website using vanilla js and php",
     "screenshots": [
-      "https://pbs.twimg.com/media/EvjB-BfUYAAXWFC.jpg",
-      "https://pbs.twimg.com/media/EvjB-BfUYAAXWFC.jpg"
+      "./data/linus1.PNG",
+      "./data/linus2.PNG",
+      "./data/linus3.PNG",
+      "./data/linus4.PNG",
+      "./data/linus5.PNG",
+      "./data/linus6.PNG",
+      "./data/linus7.PNG"
     ],
     "github": "https//github.com/sami-29/linus-tech-tips"
   },

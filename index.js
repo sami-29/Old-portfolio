@@ -8,7 +8,6 @@ const Main = document.getElementById("main-page");
 document.addEventListener("mousemove", function (e) {
   var xPos = e.pageX - 30;
   var yPos = e.pageY - 30;
-  console.log(xPos, yPos);
   let circle = document.querySelector("#circle");
   circle.style.left = xPos + "px";
   circle.style.top = yPos + "px";
@@ -53,11 +52,26 @@ const close = () => {
   HAO.style.display = "block";
 };
 
+// if the user clicks outside the navbar when the navbar is open it will close the navbar
+window.addEventListener("click", function (e) {
+  if (navbar.classList.contains("nav-bar-open")) {
+    if (
+      !navbar.contains(e.target) &&
+      !HAC.contains(e.target) &&
+      !HAO.contains(e.target)
+    ) {
+      console.log("clicked outside");
+      close();
+    }
+  }
+});
+
 HAC.addEventListener("click", () => {
   close();
 });
 
 HAO.addEventListener("click", () => {
+  console.log("clicked");
   open();
 });
 
@@ -65,6 +79,7 @@ HAO.addEventListener("click", () => {
 
 li.forEach((element) => {
   element.addEventListener("click", () => {
+    console.log("clicked outside");
     close();
   });
 });
