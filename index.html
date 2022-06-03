@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="./icon.PNG">
+    <title>Sami's portfolio</title>
+    <link rel="stylesheet" href="./styles/style.css">
+
+</head>
+
+<body>
+    <div id="circle">
+
+    </div>
+    <div id="circle-in"></div>
+
+    <div id="stage-1">
+        <div class="skip">
+            <button id="skip-button">Skip</button>
+        </div>
+        <div class="welcome">
+            <h1>WELCOME TO MY PORTFOLIO</h1>
+        </div>
+        <div class="about">
+            <h2>About me</h2>
+            <p>
+                I am a student at the University of Applied Sciences in Salzburg, Austria. I am currently studying
+                Computer Science and Mathematics. I am a self-taught programmer and I am always looking for new
+                challenges.
+            </p>
+        </div>
+    </div>
+
+    <div style="display: none;" id="main-page">
+        <header>
+            <nav class="nav-bar nav-bar-closed">
+                <div class="nav-links">
+                    <ul>
+                        <li><a href="#aboutme">About me</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="https://www.github.com/sami-29" target="_blank">Github</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main>
+
+            <button class="hamburger hamburger-closed">
+                X
+            </button>
+            <button class="hamburger hamburger-open">
+                <div>-----</div>
+                <div>-----</div>
+                <div>-----</div>
+            </button>
+
+            <section id="aboutme">
+                <h2>About me</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo recusandae veritatis veniam
+                    officiis, earum eaque sint eveniet esse nisi facilis non rerum culpa voluptatum maxime cum! Debitis
+                    asperiores vero corrupti!
+                    Corporis, numquam iure fugiat incidunt neque laudantium sequi, enim molestiae maxime inventore
+                    architecto! Porro maiores dignissimos, adipisci amet, recusandae aut itaque praesentium quidem
+                    repellat, minus quasi voluptates blanditiis perspiciatis mollitia.
+                    Adipisci perspiciatis voluptatibus ab eos consectetur tempora facere amet odit, quis mollitia
+                    voluptatum ea dolor quo velit magni accusantium repudiandae, placeat, eum labore et quisquam nisi
+                    quos praesentium. Rem, repellendus!
+                </p>
+                <a class="down" href="#projects"></a>
+            </section>
+            <section id="projects">
+                <h1>Projects</h1>
+                <br>
+                <div id="projects-container" class="carousel"></div>
+                <div class="dots" style="text-align:center">
+                </div>
+
+                <div class="modal" style="display: none;">
+                    <div class="modal-content"></div>
+                </div>
+            </section>
+            <section id="contact">
+                <a class="down" href="#projects"></a>
+                <h2>contact</h2>
+                <form id="form" action="">
+                    <label for="message">Your message: </label>
+                    <br>
+                    <textarea spellcheck="true" name="message" cols="30" rows="10"
+                        placeholder="Enter your message."></textarea>
+                    <label for="submit"></label>
+                    <input name="submit" type="submit">
+                </form>
+
+            </section>
+
+        </main>
+        <footer></footer>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

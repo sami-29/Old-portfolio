@@ -1,0 +1,81 @@
+[
+  {
+    "id": "1",
+    "name": "calculator-js",
+    "description": "A simple calculator",
+    "screenshots": ["https://pbs.twimg.com/media/EvjB-BfUYAAXWFC.jpg"],
+    "github": "https://github.com/sami-29/calculator-js"
+  },
+  {
+    "id": "2",
+    "name": "sorting-algorithms-visualizer-js",
+    "description": "A visualizer for sorting algorithms",
+    "screenshots": [
+      "https://pbs.twimg.com/media/EvjB-BfUYAAXWFC.jpg",
+      "https://pbs.twimg.com/media/EvjB-BfUYAAXWFC.jpg"
+    ]
+  },
+  {
+    "id": "3",
+    "name": "chess-js",
+    "description": "A chess game",
+    "screenshots": [
+      "https://pbs.twimg.com/media/EvjB-BfUYAAXWFC.jpg",
+      "https://pbs.twimg.com/media/EvjB-BfUYAAXWFC.jpg"
+    ]
+  },
+  {
+    "id": "4",
+    "name": "snake-js",
+    "description": "A snake game",
+    "screenshots": [
+      "https://pbs.twimg.com/media/EvjB-BfUYAAXWFC.jpg",
+      "https://pbs.twimg.com/media/EvjB-BfUYAAXWFC.jpg"
+    ]
+  },
+  {
+    "id": "5",
+    "name": "facebook-clone-react",
+    "description": "A clone of facebook using react",
+    "screenshots": [
+      "https://pbs.twimg.com/media/EvjB-BfUYAAXWFC.jpg",
+      "https://pbs.twimg.com/media/EvjB-BfUYAAXWFC.jpg"
+    ]
+  },
+  {
+    "id": "6",
+    "name": "todo-list-react",
+    "description": "A todo list using react",
+    "screenshots": [
+      "https://pbs.twimg.com/media/EvjB-BfUYAAXWFC.jpg",
+      "https://pbs.twimg.com/media/EvjB-BfUYAAXWFC.jpg"
+    ]
+  },
+  {
+    "id": "7",
+    "name": "linus-tech-tips",
+    "description": "An e-commerce website using vanilla js and php",
+    "screenshots": [
+      "https://pbs.twimg.com/media/EvjB-BfUYAAXWFC.jpg",
+      "https://pbs.twimg.com/media/EvjB-BfUYAAXWFC.jpg"
+    ]
+  },
+  {
+    "id": "8",
+    "name": "rock-paper-scissors-react",
+    "description": "A game of rock paper scissors using react",
+    "screenshots": [
+      "https://pbs.twimg.com/media/EvjB-BfUYAAXWFC.jpg",
+      "https://pbs.twimg.com/media/EvjB-BfUYAAXWFC.jpg"
+    ]
+  },
+  {
+    "id": "9",
+    "name": "huddle-landing-page",
+    "description": "A landing page for a startup",
+    "screenshots": [
+      "https://pbs.twimg.com/media/EvjB-BfUYAAXWFC.jpg",
+      "https://pbs.twimg.com/media/EvjB-BfUYAAXWFC.jpg"
+    ]
+  }
+]

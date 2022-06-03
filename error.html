@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    url_string = window.location.href;
+    var url = new URL(url_string);
+    var status = url.searchParams.get("status");
+    var statusText = url.searchParams.get("statusText");
+
+    document.write("<h1>Error " + status + "</h1>");
+    document.write("<p>" + statusText + "</p>");
+
+</script>
+
+</html>
