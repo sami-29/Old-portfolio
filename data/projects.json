@@ -3,79 +3,66 @@
     "id": "1",
     "name": "calculator-js",
     "description": "A simple calculator",
-    "screenshots": ["https://pbs.twimg.com/media/EvjB-BfUYAAXWFC.jpg"],
+    "screenshots": ["./data/calculator1.PNG", "./data/calculator2.PNG"],
     "github": "https://github.com/sami-29/calculator-js"
   },
   {
     "id": "2",
-    "name": "sorting-algorithms-visualizer-js",
-    "description": "A visualizer for sorting algorithms",
-    "screenshots": [
-      "https://pbs.twimg.com/media/EvjB-BfUYAAXWFC.jpg",
-      "https://pbs.twimg.com/media/EvjB-BfUYAAXWFC.jpg"
-    ]
-  },
-  {
-    "id": "3",
     "name": "chess-js",
     "description": "A chess game",
     "screenshots": [
-      "https://pbs.twimg.com/media/EvjB-BfUYAAXWFC.jpg",
-      "https://pbs.twimg.com/media/EvjB-BfUYAAXWFC.jpg"
-    ]
+      "./data/chess1.PNG",
+      "./data/chess2.PNG",
+      "./data/chess3.PNG"
+    ],
+    "github": "https://github.com/sami-29/chess-js"
+  },
+  {
+    "id": "3",
+    "name": "snake-js",
+    "description": "A snake game",
+    "screenshots": ["./data/snake1.PNG"],
+    "github": "https://github.com/sami-29/snake-js"
   },
   {
     "id": "4",
-    "name": "snake-js",
-    "description": "A snake game",
-    "screenshots": [
-      "https://pbs.twimg.com/media/EvjB-BfUYAAXWFC.jpg",
-      "https://pbs.twimg.com/media/EvjB-BfUYAAXWFC.jpg"
-    ]
-  },
-  {
-    "id": "5",
     "name": "facebook-clone-react",
     "description": "A clone of facebook using react",
     "screenshots": [
       "https://pbs.twimg.com/media/EvjB-BfUYAAXWFC.jpg",
       "https://pbs.twimg.com/media/EvjB-BfUYAAXWFC.jpg"
-    ]
+    ],
+    "github": "https://github.com/sami-29/facebook-clone-react"
   },
   {
-    "id": "6",
+    "id": "5",
     "name": "todo-list-react",
     "description": "A todo list using react",
     "screenshots": [
       "https://pbs.twimg.com/media/EvjB-BfUYAAXWFC.jpg",
       "https://pbs.twimg.com/media/EvjB-BfUYAAXWFC.jpg"
-    ]
+    ],
+    "github": "https//github.com/sami-29/todo-list-react"
   },
   {
-    "id": "7",
+    "id": "6",
     "name": "linus-tech-tips",
     "description": "An e-commerce website using vanilla js and php",
     "screenshots": [
       "https://pbs.twimg.com/media/EvjB-BfUYAAXWFC.jpg",
       "https://pbs.twimg.com/media/EvjB-BfUYAAXWFC.jpg"
-    ]
+    ],
+    "github": "https//github.com/sami-29/linus-tech-tips"
   },
   {
-    "id": "8",
-    "name": "rock-paper-scissors-react",
-    "description": "A game of rock paper scissors using react",
-    "screenshots": [
-      "https://pbs.twimg.com/media/EvjB-BfUYAAXWFC.jpg",
-      "https://pbs.twimg.com/media/EvjB-BfUYAAXWFC.jpg"
-    ]
-  },
-  {
-    "id": "9",
+    "id": "7",
     "name": "huddle-landing-page",
     "description": "A landing page for a startup",
     "screenshots": [
-      "https://pbs.twimg.com/media/EvjB-BfUYAAXWFC.jpg",
-      "https://pbs.twimg.com/media/EvjB-BfUYAAXWFC.jpg"
-    ]
+      "./data/huddle1.PNG",
+      "./data/huddle2.PNG",
+      "./data/huddle3.PNG"
+    ],
+    "github": "https//github.com/sami-29/huddle-landing-page"
   }
 ]
