@@ -629,6 +629,7 @@
 }
 
 #contact #form {
+  margin-bottom: 2em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -638,7 +639,17 @@
           flex-direction: column;
 }
 
+#contact #form input {
+  padding: 10px;
+}
+
 #contact #form textarea {
+  padding: 10px;
+  resize: none;
+  overflow-y: scroll;
+}
+
+#contact #form button {
   padding: 10px;
 }
 

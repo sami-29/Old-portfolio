@@ -22,10 +22,20 @@
     text-align: center;
   }
   #form {
+    margin-bottom: 2em;
     display: flex;
     flex-direction: column;
 
+    input {
+      padding: 10px;
+    }
+
     textarea {
+      padding: 10px;
+      resize: none;
+      overflow-y: scroll;
+    }
+    button {
       padding: 10px;
     }
   }

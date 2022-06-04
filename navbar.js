@@ -48,3 +48,15 @@ li.forEach((element) => {
     close();
   });
 });
+
+window.addEventListener("keydown", (e) => {
+  if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") {
+    return;
+  } else {
+    if (e.key === "n") {
+      open();
+    } else if (e.key === "c") {
+      close();
+    }
+  }
+});
