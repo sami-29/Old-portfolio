@@ -1,0 +1,38 @@
+#stage-1 > .welcome {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 2em;
+  color: #fff;
+  animation: fadeinout 3s forwards;
+}
+
+#stage-1 > .about {
+  position: absolute;
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 2em;
+  color: #fff;
+  animation: fadeinout 10s forwards;
+  animation-timing-function: ease-out;
+  animation-delay: 3s;
+}
+
+.skip {
+  position: absolute;
+  top: 2%;
+  left: 0%;
+  font-size: 1.5em;
+  color: #fff;
+  button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.2em;
+  }
+}

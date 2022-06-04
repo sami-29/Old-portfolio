@@ -1,0 +1,44 @@
+//Animations
+@keyframes fadein {
+  0% {
+    opacity: 0;
+    left: -100%;
+  }
+  100% {
+    opacity: 1;
+    left: 0%;
+  }
+}
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+    left: 0%;
+  }
+  100% {
+    opacity: 0;
+    left: -100%;
+  }
+}
+@keyframes fadeinout {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}

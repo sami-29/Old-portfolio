@@ -1,0 +1,28 @@
+#contact {
+  background-color: rgba(216, 131, 33, 0.692);
+  height: 100vh;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  @media only screen and (max-width: 768px) {
+    font-size: 24px;
+  }
+  & > h2 {
+    font-size: 2em;
+    font-weight: 600;
+    margin-bottom: 2em;
+  }
+
+  & > p {
+    font-size: 1em;
+    margin-bottom: 2em;
+    text-align: center;
+  }
+  #form {
+    display: flex;
+    flex-direction: column;
+  }
+}

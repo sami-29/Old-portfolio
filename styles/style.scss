@@ -1,4 +1,12 @@
 @import "./variables";
+@import "stage1";
+@import "animations";
+@import "aboutme";
+@import "navbar";
+@import "projects";
+@import "carousel";
+@import "modal";
+@import "contactme";
 
 html,
 body,
@@ -7,8 +15,8 @@ body,
   overflow: hidden;
   margin: 0px;
   padding: 0px;
-  font-size: 100%;
   cursor: none;
+  font-size: 100%;
 }
 a {
   text-decoration: none;
@@ -20,475 +28,12 @@ body {
   height: 100vh;
 }
 
-#stage-1 > .welcome {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  font-size: 2em;
-  color: #fff;
-  animation: fadeinout 3s forwards;
-}
-
-#stage-1 > .about {
-  position: absolute;
-  opacity: 0;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  font-size: 2em;
-  color: #fff;
-  animation: fadeinout 10s forwards;
-  animation-timing-function: ease-out;
-  animation-delay: 3s;
-}
-
-.skip {
-  position: absolute;
-  top: 2%;
-  left: 0%;
-  font-size: 1.5em;
-  color: #fff;
-  button {
-    background-color: transparent;
-    border: none;
-    color: #fff;
-    font-size: 1.2em;
-  }
-}
-
-@keyframes fadeinout {
-  0% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
 // MAIN
 
 #main-page {
   height: 100vh;
   min-height: 100vh;
   width: 100vw;
-}
-@keyframes fadein {
-  0% {
-    opacity: 0;
-    left: -100%;
-  }
-  100% {
-    opacity: 1;
-    left: 0%;
-  }
-}
-@keyframes fadeout {
-  0% {
-    opacity: 1;
-    left: 0%;
-  }
-  100% {
-    opacity: 0;
-    left: -100%;
-  }
-}
-
-.nav-bar-closed {
-  animation: fadeout 0.5s forwards ease-in;
-}
-
-.nav-bar-open {
-  animation: fadein 0.5s forwards ease-out;
-}
-
-.nav-bar {
-  opacity: 0;
-  display: grid;
-  position: fixed;
-  width: 30%;
-  height: 100vh;
-
-  background-color: $nav-color;
-  z-index: 1;
-
-  @media (max-width: 768px) {
-    width: 70%;
-  }
-
-  ul {
-    height: 100%;
-    text-align: center;
-    list-style: none;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
-    li {
-      display: grid;
-      grid-template-columns: 1fr;
-      align-items: center;
-      &:hover {
-        background-color: $nav-link-hover-color;
-      }
-
-      a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-        width: 100%;
-        color: #fff;
-        font-size: 2.5em;
-        text-decoration: none;
-      }
-    }
-  }
-}
-
-.hamburger {
-  border: none;
-  background-color: transparent;
-  font-weight: 900;
-  font-size: 1.5em;
-  position: absolute;
-  height: 50px;
-  width: 50px;
-  left: 0%;
-  color: #fff;
-  background-color: transparent;
-  top: 1%;
-  z-index: 999;
-  left: 1%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hamburger-closed {
-  display: none;
-  font-size: 2em;
-  font-weight: 600;
-}
-
-.hamburger-open {
-  letter-spacing: -2px;
-  line-height: 10px;
-  display: block;
-}
-
-#aboutme {
-  margin: 0px 40px;
-  height: 100vh;
-
-  display: flex;
-  flex-direction: column;
-  color: rgb(236, 225, 225);
-  text-align: center;
-  justify-content: center;
-  font-size: 30px;
-  @media only screen and (max-width: 768px) {
-    font-size: 24px;
-    margin: 0 20px;
-  }
-
-  & > h2 {
-    font-size: 2em;
-    font-weight: 600;
-    margin-bottom: 2em;
-  }
-
-  & > p {
-    font-size: 1em;
-    text-align: center;
-    margin-bottom: 4em;
-  }
-}
-
-#projects {
-  height: 100vh;
-  min-height: 100vh;
-  background-color: #c5846a;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  font-size: 30px;
-  @media only screen and (max-width: 768px) {
-    font-size: 24px;
-  }
-  & h1 {
-    font-size: 3em;
-    font-weight: 800;
-  }
-  & h2 {
-    font-size: 3em;
-    font-weight: 700;
-  }
-
-  & p {
-    font-size: 0.5em;
-    text-align: center;
-  }
-  & .project-card {
-    display: none;
-  }
-
-  .dot {
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-  }
-  /* when */
-  .active,
-  .dot:hover {
-    background-color: #717171;
-  }
-
-  .project-image {
-    position: relative;
-    &:hover {
-      opacity: 0.7;
-    }
-  }
-
-  .project-image:hover .read-more {
-    visibility: visible;
-    opacity: 1;
-  }
-
-  .read-more {
-    position: absolute;
-    // center
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    visibility: hidden;
-    font-size: 1em;
-    font-weight: 700;
-    color: #fff;
-    visibility: hidden;
-    opacity: 0;
-
-    transition: opacity 0.2s, visibility 0.2s;
-  }
-
-  .text {
-    font-size: 1em;
-    padding: 8px 12px;
-    position: absolute;
-    background-color: #ccc5c5;
-    bottom: 0px;
-    width: 100%;
-    text-align: center;
-  }
-}
-
-img {
-  width: 100%;
-  height: 100%;
-}
-
-#contact {
-  background-color: rgba(216, 131, 33, 0.692);
-  height: 100vh;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 30px;
-  @media only screen and (max-width: 768px) {
-    font-size: 24px;
-  }
-  & > h2 {
-    font-size: 2em;
-    font-weight: 600;
-    margin-bottom: 2em;
-  }
-
-  & > p {
-    font-size: 1em;
-    margin-bottom: 2em;
-    text-align: center;
-  }
-  #form {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-.prev,
-.next {
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  background-color: #acabab;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@keyframes fade {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.carousel {
-  max-width: 1000px;
-  position: relative;
-  img {
-    width: 100%;
-    height: 100%;
-  }
-}
-
-.modal-dot {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active,
-.modal-dot:hover {
-  background-color: #717171;
-}
-
-.modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  min-height: 100vh;
-  position: relative;
-}
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  max-height: 100vh;
-}
-.modal-header {
-  font-size: 24px;
-  padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
-  & > span {
-    float: right;
-    font-size: 24px;
-    font-weight: 600;
-    color: white;
-    &:hover {
-      color: #999;
-    }
-  }
-
-  & > h2 {
-    font-size: 1.5em;
-    font-weight: 600;
-    text-align: center;
-  }
-}
-.modal-body {
-  padding: 2px 16px;
-
-  // take up the whole remaining space
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100%;
-  & > p {
-    font-size: 1em;
-    margin-bottom: 2em;
-    text-align: center;
-    background-color: #888;
-  }
-}
-.modal-footer {
-  padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
-  // put it in the bottom
-  position: absolute;
-  bottom: 1em;
-}
-
-.carousel-inner {
-  width: 100%;
-  height: 100%;
-  max-height: 100%;
-  overflow: hidden;
-}
-
-#circle {
-  backdrop-filter: blur(1px);
-  pointer-events: none;
-  z-index: 9999;
-  border-radius: 50%;
-  height: 60px;
-  width: 60px;
-  background: transparent;
-  position: absolute;
-  padding: 5px;
-  border: black solid 5px;
-  transition: 0.2s ease-out;
 }
 
 #circle-in {
@@ -507,4 +52,18 @@ img {
   z-index: 99999;
 
   pointer-events: none;
+}
+
+#circle {
+  backdrop-filter: blur(1px);
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  background: transparent;
+  position: absolute;
+  padding: 5px;
+  border: black solid 5px;
+  transition: 0.2s ease-out;
 }

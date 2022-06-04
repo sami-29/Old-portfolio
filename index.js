@@ -1,90 +1,3 @@
-// after 13 seconds after the page loads the following function will be called
-// this function will make the div with the id of stage-1 removed from the DOM
-// this function will make the div with the id of stage-2 display: block
-
-const stage1 = document.getElementById("stage-1");
-const Main = document.getElementById("main-page");
-
-document.addEventListener("mousemove", function (e) {
-  var xPos = e.pageX - 30;
-  var yPos = e.pageY - 30;
-  let circle = document.querySelector("#circle");
-  circle.style.left = xPos + "px";
-  circle.style.top = yPos + "px";
-
-  let circle2 = document.querySelector("#circle-in");
-  var xPos2 = e.pageX;
-  var yPos2 = e.pageY;
-  circle2.style.left = xPos2 + "px";
-  circle2.style.top = yPos2 + "px";
-});
-
-const MainPage = () => {
-  stage1.remove();
-  Main.style.display = "grid";
-};
-
-if (localStorage.getItem("done") === "true") {
-  MainPage();
-} else {
-  const skip = document.getElementsByClassName("skip");
-  skip[0].addEventListener("click", MainPage);
-  localStorage.setItem("done", "true");
-  setTimeout(MainPage, 13000);
-}
-
-const HAC = document.querySelector(".hamburger-closed");
-const HAO = document.querySelector(".hamburger-open");
-const navbar = document.querySelector(".nav-bar");
-const li = document.querySelectorAll("li");
-
-const open = () => {
-  navbar.classList.add("nav-bar-open");
-  navbar.classList.remove("nav-bar-closed");
-  HAC.style.display = "block";
-  HAO.style.display = "none";
-};
-
-const close = () => {
-  navbar.classList.remove("nav-bar-open");
-  navbar.classList.add("nav-bar-closed");
-  HAC.style.display = "none";
-  HAO.style.display = "block";
-};
-
-// if the user clicks outside the navbar when the navbar is open it will close the navbar
-window.addEventListener("click", function (e) {
-  if (navbar.classList.contains("nav-bar-open")) {
-    if (
-      !navbar.contains(e.target) &&
-      !HAC.contains(e.target) &&
-      !HAO.contains(e.target)
-    ) {
-      console.log("clicked outside");
-      close();
-    }
-  }
-});
-
-HAC.addEventListener("click", () => {
-  close();
-});
-
-HAO.addEventListener("click", () => {
-  console.log("clicked");
-  open();
-});
-
-// add a click event listener to every li element
-
-li.forEach((element) => {
-  element.addEventListener("click", () => {
-    console.log("clicked outside");
-    close();
-  });
-});
-
-//
 const sendHttpRequest = (method, file, data = null) => {
   const promise = new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
@@ -113,6 +26,7 @@ const sendHttpRequest = (method, file, data = null) => {
   });
   return promise;
 };
+
 let Projects;
 
 let plusSlides, currentSlide, showSlides;
@@ -194,8 +108,6 @@ sendHttpRequest("GET", "data/projects.json").then((data) => {
   const readmore = document.querySelectorAll(".read-more");
   readmore.forEach((element) => {
     const data = JSON.parse(element.firstElementChild.innerText);
-    console.log(data);
-
     element.parentElement.addEventListener("click", () => {
       const modal = document.querySelector(".modal");
       modal.style.display = "block";
@@ -206,28 +118,33 @@ sendHttpRequest("GET", "data/projects.json").then((data) => {
         <h2>${data.name}</h2>
       </div>
       <div class="modal-body">
-        <div class="carousel">
-          <div class="carousel-inner fade">
-            ${data.screenshots.map(
-              (screenshot, i) =>
-                `<div class="carousel-item">
-                  <div class="numbertext">${i + 1}/${
-                  data.screenshots.length
-                }</div>
-                  <img src=${screenshot} alt=${data.name}>
-                </div>`
-            )}
-          </div>
-          <a class="prev" onclick="plusSlidesModal(-1)">&#10094;</a>
-          <a class="next" onclick="plusSlidesModal(1)">&#10095;</a>
+        <div class = "container">
+        <div class="carousel carousel-modal">
         </div>
         <div class="modal-dots" style="text-align:center"></div>
+        </div>
+        <div class="modal-description">
         <p>${data.description}</p>
+        </div>
       </div>
       <div class="modal-footer">
         <a href="${data.github}" target="_blank">Visit the project's repo</a>
       </div>
       `;
+      var carousel = document.querySelector(".carousel-modal");
+      console.log(carousel);
+      for (let i = 0; i < data.screenshots.length; i++) {
+        console.log(i);
+        carousel.innerHTML += `
+          <div class="carousel-item">
+                  <div class="numbertext">${i + 1}/${
+          data.screenshots.length
+        }</div>
+                  <img src=${data.screenshots[i]} alt=${data.name}/>
+                </div>`;
+      }
+      carousel.innerHTML += `<a class="prev" onclick="plusSlidesModal(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlidesModal(1)">&#10095;</a>`;
 
       const close = document.querySelector(".close");
       close.addEventListener("click", () => {
@@ -244,7 +161,6 @@ sendHttpRequest("GET", "data/projects.json").then((data) => {
 
       var modalDots = document.querySelector(".modal-dots");
       for (let i = 0; i < data.screenshots.length; i++) {
-        console.log(i);
         modalDots.innerHTML += `<span class="modal-dot" onclick="currentSlideModal(${
           i + 1
         })"></span>`;

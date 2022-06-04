@@ -68,5 +68,12 @@
       "./data/huddle3.PNG"
     ],
     "github": "https//github.com/sami-29/huddle-landing-page"
+  },
+  {
+    "id": 8,
+    "name": "rock-paper-scissors-react",
+    "description": "A game of rock paper scissors using react",
+    "screenshots": ["./data/rps1.PNG", "./data/rps2.PNG"],
+    "github": "https://github.com/sami-29/rock-paper-scissors-react"
   }
 ]
