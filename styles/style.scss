@@ -50,11 +50,12 @@ body {
   padding: 5px;
   border: inherit solid 10px;
   z-index: 99999;
-
+  display: none;
   pointer-events: none;
 }
 
 #circle {
+  display: none;
   backdrop-filter: blur(2px);
   pointer-events: none;
   z-index: 9999;

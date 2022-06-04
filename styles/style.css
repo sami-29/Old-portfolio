@@ -694,10 +694,12 @@ body {
   padding: 5px;
   border: inherit solid 10px;
   z-index: 99999;
+  display: none;
   pointer-events: none;
 }
 
 #circle {
+  display: none;
   -webkit-backdrop-filter: blur(2px);
           backdrop-filter: blur(2px);
   pointer-events: none;
