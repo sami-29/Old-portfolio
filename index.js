@@ -28,11 +28,13 @@ const sendHttpRequest = (method, file, data = null) => {
 };
 
 let Projects;
-
 let plusSlides, currentSlide, showSlides;
-var currentSlideModal, plusSlidesModal, showSlidesModal;
+let currentSlideModal, plusSlidesModal, showSlidesModal;
+
+var modal = document.querySelector(".modal");
 
 sendHttpRequest("GET", "data/projects.json").then((data) => {
+  // PROJECTS CAROUSEL
   Projects = data;
   ProjectsContainer = document.querySelector("#projects-container");
   Projects.forEach((project, i) => {
@@ -105,9 +107,12 @@ sendHttpRequest("GET", "data/projects.json").then((data) => {
 
   showSlides(slideIndex);
 
+  // PROJECTS MODAL CAROUSEL
+
   const readmore = document.querySelectorAll(".read-more");
   readmore.forEach((element) => {
     const data = JSON.parse(element.firstElementChild.innerText);
+    console.log(element.parentElement);
     element.parentElement.addEventListener("click", () => {
       const modal = document.querySelector(".modal");
       modal.style.display = "block";
@@ -132,9 +137,7 @@ sendHttpRequest("GET", "data/projects.json").then((data) => {
       </div>
       `;
       var carousel = document.querySelector(".carousel-modal");
-      console.log(carousel);
       for (let i = 0; i < data.screenshots.length; i++) {
-        console.log(i);
         carousel.innerHTML += `
           <div class="carousel-item">
                   <div class="numbertext">${i + 1}/${
@@ -195,12 +198,115 @@ sendHttpRequest("GET", "data/projects.json").then((data) => {
       showSlidesModal(slideIndexModal);
     });
 
-    // make it so the modal closes when you click outside of it
-    const modal = document.querySelector(".modal");
+    // MODAL CLOSES ON CLICK OUTSIDE
+
     window.addEventListener("click", (event) => {
       if (event.target === modal) {
         modal.style.display = "none";
       }
     });
   });
+
+  window.addEventListener("keydown", (e) => {
+    if (
+      window.location.hash === "#projects" &&
+      modal.style.display === "none"
+    ) {
+      if (e.keyCode === 39) {
+        plusSlides(1);
+      } else if (e.keyCode === 37) {
+        plusSlides(-1);
+      }
+      // if press enter key  click on the .project-image where display is not none to open modal
+      else if (e.keyCode === 13) {
+        const projectImages = document.querySelectorAll(".project-image");
+        projectImages.forEach((element) => {
+          if (element.parentElement.style.display !== "none") {
+            element.click();
+          }
+        });
+      }
+    } else if (
+      window.location.hash === "#projects" &&
+      modal.style.display === "block"
+    ) {
+      if (e.keyCode === 39) {
+        plusSlidesModal(1);
+      } else if (e.keyCode === 37) {
+        plusSlidesModal(-1);
+      } else if (e.keyCode === 27) {
+        const close = document.querySelector(".close");
+        close.click();
+      }
+    }
+  });
+});
+
+// add event listener to navigate hashes bottom arrow key and top arrow key to navigate between sections
+window.addEventListener("keydown", (e) => {
+  // if the user presses the down arrow key
+  if (e.keyCode === 40) {
+    // if the user is on the home page
+    if (window.location.hash === "#aboutme" || window.location.hash === "") {
+      // move to the projects section with smooth scroll
+      projects.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+      //after the smooth scroll is complete change the hash to #projects
+      setTimeout(() => {
+        window.location.hash = "#projects";
+      }, 400);
+    } else if (window.location.hash === "#projects") {
+      // move to the about section
+      contact.scrollIntoView({
+        behavior: "smooth",
+      });
+      setTimeout(() => {
+        window.location.hash = "#contact";
+      }, 400);
+    }
+  }
+  // if the user presses the up arrow key
+  else if (e.keyCode === 38) {
+    // if the user is on the projects section
+    if (window.location.hash === "#projects") {
+      // move to the about section
+      aboutme.scrollIntoView({
+        behavior: "smooth",
+      });
+      setTimeout(() => {
+        window.location.hash = "#aboutme";
+      }, 400);
+    } else if (window.location.hash === "#contact") {
+      // move to the projects section
+      projects.scrollIntoView({
+        behavior: "smooth",
+      });
+      setTimeout(() => {
+        window.location.hash = "#projects";
+      }, 400);
+    }
+  }
+});
+
+// key code for up arrow key is 38 and down arrow key is 40 and left arrow key is 37 and right arrow key is 39
+
+window.addEventListener("load", () => {
+  // on reload redirects the hash to the last section visited
+  if (window.location.hash === "#aboutme") {
+    aboutme.scrollIntoView({
+      behavior: "smooth",
+    });
+  }
+  if (window.location.hash === "#projects") {
+    projects.scrollIntoView({
+      behavior: "smooth",
+    });
+  }
+  if (window.location.hash === "#contact") {
+    contact.scrollIntoView({
+      behavior: "smooth",
+    });
+  }
 });

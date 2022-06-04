@@ -77,5 +77,6 @@
 }
 
 .nav-bar-open {
+  display: grid;
   animation: fadein 0.5s forwards ease-out;
 }
