@@ -1,7 +1,7 @@
 .modal {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 9998;
   left: 0;
   top: 0;
   width: 100%;
@@ -37,7 +37,7 @@
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 100%;
     min-height: 100vh;
     position: relative;
   }
@@ -58,6 +58,7 @@
     .carousel-modal {
       width: 100%;
     }
+
     .container {
       width: 50%;
       display: flex;

@@ -55,12 +55,12 @@ body {
 }
 
 #circle {
-  backdrop-filter: blur(1px);
+  backdrop-filter: blur(2px);
   pointer-events: none;
   z-index: 9999;
   border-radius: 50%;
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 50px;
   background: transparent;
   position: absolute;
   padding: 5px;
