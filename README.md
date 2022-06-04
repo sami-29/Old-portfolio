@@ -1,2 +1,2 @@
 # portfolio
-Portfolio using vanilla js
+Portfolio using `vanilla js` and `SCSS`
